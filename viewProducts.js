@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
         fetch(urlBase)
         .then(response => {
             if (!response.ok) {
-                throw new Error('Network response was not ok');
+                throw new Error('Ocurrió un error');
             }
             return response.json();
         })
@@ -37,8 +37,8 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         
             document.getElementById('productosCargados').innerHTML = html;
-        
-            // Agregar event listener para botones de eliminar
+
+            //SELECCIONO EL BOTON ELIMINAR Y OBTENGO EL ID DE LA FILA QUE NECESITO PARA USARLO COMO PARAMETRO EN EL METODO eliminarProducto.
             let botonesEliminar = document.querySelectorAll('.eliminar');
             botonesEliminar.forEach(boton => {
                 boton.addEventListener('click', function() {
@@ -47,6 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             });
 
+           //SELECCIONO EL BOTON EDITAR Y OBTENGO EL ID DE LA FILA QUE NECESITO PARA USARLO COMO PARAMETRO EN EL METODO editarProducto. 
             let botonesEditar = document.querySelectorAll('.editar');
             botonesEditar.forEach(boton => {
                 boton.addEventListener('click', function() {
@@ -57,9 +58,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         function eliminarProducto(idProducto) {
-            // Preguntar al usuario si está seguro de eliminar el producto
+            // PREGUNTO SI REALMENTE QUIERE ELIMINARLO..
             if (confirm('¿Estás seguro de que quieres eliminar este producto?')) {
-                // Hacer una solicitud DELETE a tu API para eliminar el producto con el id 'idProducto'
+                // Hacer una solicitud DELETE a la API para eliminar el producto con el id 'idProducto'
                 fetch(urlBase, {
                     method: 'DELETE',
                     headers: { 'Content-Type': 'application/json'},
@@ -71,8 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (!response.ok) {
                         throw new Error('Network response was not ok');
                     }
-                    // Producto eliminado con éxito
-                    console.log('Producto eliminado exitosamente');
+                    alert('Producto eliminado exitosamente');
                 })
                 .catch(error => {
                     console.error('Error al eliminar el producto:', error);
