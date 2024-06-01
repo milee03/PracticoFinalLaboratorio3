@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.2/css/all.css" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Editar Producto</title>
+</head>
+<header>
+    <script src="header.js"></script>
+</header>
+<body>
+    <script src="menu.js"></script>
+    <div class="container-newProduct">
+        <h3 class="h3">Ingrese los datos que desea modificar:</h3>
+        <form class="form-group">
+            <div class="sectionFormA">
+                <label for="titulo">Título:</label>
+                <input type="text" class="input" id="titulo" placeholder="Ingrese el nombre del Producto">
+                <br>
+                <label for="fecha">Ingrese Fecha:</label>
+                <input type="date" id="fecha" name="fecha" min="2024-01-01" max="2024-12-31" />
+            </div>
+            <br>
+            <div class="sectionFormB">
+                <label for="pesos">Precio Pesos:</label>
+                <input type="number" class="input" id="pesos" placeholder="Ingrese el precio ($) del Producto">
+                <br>
+                <label for="dolar">Precio Dólar:</label>
+                <input type="number" class="input" id="dolar" placeholder="Ingrese el precio (U$S) del Producto">
+                <br>
+            </div>
+            <button type="button" class="btn btn-success" id="btnguardar">Guardar</button>
+            <button type="button" class="btn btn-warning" id="btnvolver">Volver</button>
+        </form>
+    </div>
+</body>
+<script src="footer.js"></script>
+</html>
+<script src="editproduct.js"></script>

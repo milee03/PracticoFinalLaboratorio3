@@ -172,11 +172,15 @@ form{
     margin-right: 10px;
 }
 
-#btnguardar{
+#btnguardar, #btnvolver{
     height: 44px;
     text-align: center;
     margin-top: 20px;
     margin-left: 10px;
+}
+
+#btnmostrar{
+    margin-bottom: 15px;
 }
 
 .input{
@@ -185,6 +189,11 @@ form{
 
 .table{
     width: 80%;
-    height: 340px;
+    height: 320px;
     margin-left: 70px;
+}
+
+#btnEliminar, #btnEditar{
+    font-size: 20px;
+    color:white;
 }
