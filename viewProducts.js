@@ -1,7 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
     var urlBase = 'https://api.yumserver.com/16752/products';
+    var tablaProductos = document.getElementById('contenedorTabla');
+    console.log(tablaProductos)
     //MUESTRA TODOS LOS PRODUCTOS.
     document.getElementById('btnmostrar').addEventListener('click', function(){
+        //HAGO VISIBLE LA TABLA
+        tablaProductos.style.display = 'block';
         fetch(urlBase)
         .then(response => {
             if (!response.ok) {
@@ -17,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
    //MUESTRA PRODUCTOS FILTRADOS.
     document.getElementById('btnfiltro').addEventListener('click', function(){
+        tablaProductos.style.display = 'block';
         var nombreBusqueda = document.getElementById('filtro').value.trim();
 
         fetch(urlBase)

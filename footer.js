@@ -1,5 +1,5 @@
 document.write(`
-<div class="footer-container" id="footerImg">
+<div class="footer-container" id="footer-container">
   <div class="row-100" id="footer"> 
     <div class="data-container col-3">
        <p>Dirección: 25 de Mayo 1569</p>

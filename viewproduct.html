@@ -8,28 +8,32 @@
     <link rel="stylesheet" href="style.css">
     <title>Productos</title>
 </head>
-<header>
-    <script src="header.js"></script>
-</header>
 <body>
-   <script src="menu.js"></script>
-   <button type="button" class="btn btn-warning" id="btnmostrar">Mostrar Productos</button>
-   <button type="button" class="btn btn-success" id="btnfiltro"><i class="fa-solid fa-magnifying-glass"></i></button>
-   <input type="text" id="filtro" placeholder="Ingrese el nombre del producto">
+  <header>
+      <script src="header.js"></script>
+  </header>
+  <script src="menu.js"></script>
+  <button type="button" class="btn btn-warning" id="btnmostrar">Mostrar Productos</button>
+  <button type="button" class="btn btn-success" id="btnfiltro"><i class="fa-solid fa-magnifying-glass"></i></button>
+  <input type="text" id="filtro" placeholder="Ingrese el nombre del producto">
+  <div id="contenedorTabla" style="display: none;">
     <table class="table tableProducts" id="tablaProducto">
-        <thead>
-          <tr>
-            <th>Código</th>
-            <th>Nombre Producto</th>
-            <th>Precio $</th>
-            <th>Precio U$S</th>
-            <th>Fecha</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody id="productosCargados"></tbody>
+      <thead>
+        <tr>
+          <th>Código</th>
+          <th>Nombre Producto</th>
+          <th>Precio $</th>
+          <th>Precio U$S</th>
+          <th>Fecha</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="productosCargados"></tbody>
     </table>
+  </div>
 </body>
-<script src="footer.js"></script>
-</html>
+<footer id="footerpage">
+  <script src="footer.js"></script>
+</footer>
 <script src="viewProducts.js"></script>
+</html>

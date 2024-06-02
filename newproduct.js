@@ -25,6 +25,7 @@ document.getElementById('btnguardar').addEventListener('click', function() {
         function(texto){
             if(texto.trim() == "OK"){
                 alert('Se creo el producto con exito.');
+                window.location.href = 'index.html'; 
             }else{
                 alert(texto);
             }
