@@ -3,6 +3,26 @@ var urlBase = 'https://api.yumserver.com/16752/products';
 const urlParams = new URLSearchParams(window.location.search);
 const idProducto = urlParams.get('id');
 
+//OBTENGO LOS DETALLES DEL PRODUCTO A MODIFICAR
+fetch(`${urlBase}/${idProducto}`)
+.then(response => {
+    if (!response.ok) {
+        throw new Error('No se pudo obtener el producto');
+    }
+    return response.json();
+})
+.then(producto => {
+    //LE ASIGNO LOS VALORES EN LOS CAMPOS DE TEXTO.
+    document.getElementById('titulo').value = producto.titulo;
+    document.getElementById('fecha').value = producto.fecha;
+    document.getElementById('pesos').value = producto.precioPeso;
+    document.getElementById('dolar').value = producto.precioDolar;
+})
+.catch(error => {
+    console.error('Error:', error);
+    alert('Error al obtener los datos del producto');
+});
+
 
 //FUNCIÓN PARA QUE EL SELECTOR DE FECHA SE HABILITE DESDE LA FECHA ACTUAL.
 document.addEventListener("DOMContentLoaded", function() {
