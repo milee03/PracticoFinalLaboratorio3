@@ -63,7 +63,7 @@ background-color: rgba(0, 0, 0, 0.5);
     bottom: 0;
     width: 100%;
     text-align: center;
-    z-index: 1000; /* Asegura que el footer esté siempre encima del contenido */
+    z-index: 1000; 
 }
 
 p{
@@ -165,7 +165,7 @@ a{
     height: 380px;
 }
 
-.container-newProduct{
+.container-newProduct, .container-newClient{
     width: 1000px;
     height: 340px;
     margin-left: 150px;
@@ -184,7 +184,12 @@ form{
     float: inline-end;
 }
 
-#titulo, #fecha, #pesos, #dolar{
+#formclients{
+    margin-left: 40px;
+    float: inline-end;
+}
+
+#titulo, #fecha, #pesos, #dolar, #nombre, #compra, #pago{
     margin-top: 10px;
     margin-bottom: 10px;
     margin-right: 10px;
@@ -197,7 +202,7 @@ form{
     margin-left: 10px;
 }
 
-#btnmostrar{
+#btnCliente{
     margin-bottom: 15px;
     margin-top: 10px
 }
@@ -234,8 +239,15 @@ form{
     margin-right: 100px;
     margin-top: 5px;
 }
+
+#mensaje{
+    margin-left: 250px;
+    width: 542px;
+    text-align: center;
+    float: inline-start;
+}
  
-/*RESPONSIVO PARA TABLET, SE APLICA PARA DISPOSITIVOS DE COMO MAXIMO 768PX DE PANTALLA*/
+/*RESPONSIVO PARA TABLET, SE APLICA PARA DISPOSITIVOS DE COMO MINIMO 780 Y MAXIMO 1000PX DE PANTALLA*/
 
 @media only screen and (min-width: 780px) and (max-width: 1000px) {
     .name-container {
@@ -258,7 +270,7 @@ form{
         font-size: 30px;
     }
 
-    .container-newProduct {
+    .container-newProduct, .container-newClient {
         height: 700px;
         width: 80%;
         margin-left: 10%;
@@ -318,7 +330,7 @@ form{
         display: block;
     }
 
-    #btnmostrar{
+    #btnCliente{
         margin-top: 20px;
         font-size: 10px;
         width: 120px;
@@ -327,7 +339,7 @@ form{
 }
 
 
-/*RESPONSIVO PARA CELULAR, SE APLICA PARA DISPOSITIVOS DE COMO MAXIMO 412PX DE PANTALLA*/
+/*RESPONSIVO PARA CELULAR, SE APLICA PARA DISPOSITIVOS DE COMO MINIMO 412 Y MAXIMO 770PX DE PANTALLA*/
 
 @media only screen and (min-width: 412px) and (max-width: 770px) {
     .name-container {
@@ -345,6 +357,13 @@ form{
         height: 300px;
         font-size: 10px;
     }
+
+    #tablaClientes{
+        margin-left: 5px;
+        width: 400px;
+        height: 300px;
+        font-size: 10px;
+    }
     #product-random {
         margin-top: 50px;
         width: 200px;
@@ -356,13 +375,12 @@ form{
         height: 410px;
     }
 
-    .container-newProduct {
+    .container-newProduct, .container-newClient {
         width: 80%;
         margin-left: 10%;
         margin-top: 70px;
         height: 340px;
     }
-
     .table {
         width: 95%;
         margin-left: 5%;
@@ -421,7 +439,7 @@ form{
         display: block;
     }
 
-    #btnmostrar {
+    #btnCliente {
         margin-top: 20px;
         font-size: 10px;
         width: 120px;

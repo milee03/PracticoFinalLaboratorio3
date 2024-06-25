@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.2/css/all.css" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Clientes</title>
+</head>
+<body>
+  <div class="container-main">
+  <header>
+      <script src="header.js"></script>
+  </header>
+  <script src="menu.js"></script>
+  <button type="button" class="btn btn-warning" id="btnCliente">Agregar Cliente</button>
+  <button type="button" class="btn btn-success" id="btnfiltro"><i class="fa-solid fa-magnifying-glass"></i></button>
+  <input type="text" id="filtro" placeholder="Ingrese el nombre del cliente">
+  <div id="contenedorTabla" class="table-container" style="display: none;">
+    <table class="table table-bordered tableProducts" id="tablaClientes">
+      <thead>
+        <tr>
+          <th>Código</th>
+          <th>Nombre Cliente</th>
+          <th>Importe Compra</th>
+          <th>Importe Pagado</th>
+          <th>Importe Deuda</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="clientesCargados"></tbody>
+    </table>
+  </div>
+  <div id="mensaje"></div>
+</div>
+</body>
+<footer id="footerpage">
+  <script src="footer.js"></script>
+</footer>
+<script src="clients.js"></script>
+</html>

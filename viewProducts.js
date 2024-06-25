@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const dia = fechaPartes[2];
             const fechaFormateada = `${dia}/${mes}/${anio}`;
 
-             // Formateo de precios utilizando la nueva función formateoImportes
+             // Formateo de precios utilizando la función formateoImportes
              const precioPesoFormateado = FormateoImportes(productos[i].precioPeso);
              const precioDolarFormateado = FormateoImportes(productos[i].precioDolar);
 

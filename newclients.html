@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.2/css/all.css" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Nuevo Cliente</title>
+</head>
+<header>
+    <script src="header.js"></script>
+</header>
+<body>
+    <script src="menu.js"></script>
+    <div class="container-newClient">
+        <h3 class="h3">Para el ingreso de clientes completar los siguientes datos:</h3>
+        <form class="form-group" id="formclients">
+            <div class="sectionFormA">
+                <label for="nombre">Nombre:</label>
+                <input type="text" class="input" id="nombre" placeholder="Ingrese el nombre del Cliente">
+            </div>
+            <div class="sectionFormB">
+                <label for="compra">Importe de compra:</label>
+                <input type="number" class="input" id="compra" placeholder="Ingrese el importe de la compra">
+                <br>
+                <label for="pago">Importe pagado:</label>
+                <input type="number" class="input" id="pago" placeholder="Ingrese el importe Pagado" style="width: 302px;">
+                <br>
+            </div>
+            <button type="button" class="btn btn-success" id="btnguardar">Guardar</button>
+        </form>
+    </div>
+</body>
+<script src="footer.js"></script>
+</html>
+<script>
+  var urlGeneric ='https://api.yumserver.com/16752/generic/clientes'; 
+   document.getElementById('btnguardar').addEventListener('click', function() {
+    // Obtener los valores de los campos del formulario
+    let nombreCliente = document.getElementById('nombre').value;
+    let importeCompra = document.getElementById('compra').value;
+    let importePagado = document.getElementById('pago').value;
+
+    // Crear el objeto cliente con los datos formateados
+    let cliente = {
+        param1: nombreCliente,
+        param3: importeCompra,
+        param4: importePagado
+    };
+
+    // Enviar la solicitud a la API para guardar el cliente
+    fetch(urlGeneric, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json'},
+        body: JSON.stringify(cliente)
+    })
+    .then(response => response.text())
+    .then(function(texto) {
+        if (texto.trim() === "OK") {
+            alert('Se creó el cliente con éxito.');
+            window.location.href = 'clients.html'; 
+        } else {
+            alert(texto);
+        }
+    })
+    .catch(error => console.error('Error:', error));
+});
+</script>

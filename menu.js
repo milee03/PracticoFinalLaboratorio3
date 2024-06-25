@@ -4,6 +4,7 @@ document.write(`
       <a href="index.html">Inicio</a>
       <a href="viewproduct.html" id="viewProduts">Ver Productos</a>
       <a href="newproduct.html">Cargar Productos</a>
+      <a href="clients.html">Clientes</a>
    </nav>
 </div>
 `);
