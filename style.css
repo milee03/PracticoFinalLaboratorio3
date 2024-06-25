@@ -237,7 +237,7 @@ form{
  
 /*RESPONSIVO PARA TABLET, SE APLICA PARA DISPOSITIVOS DE COMO MAXIMO 768PX DE PANTALLA*/
 
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 780px) and (max-width: 1000px) {
     .name-container {
         font-size: 30px !important;
         margin-right: 100px;
@@ -329,7 +329,7 @@ form{
 
 /*RESPONSIVO PARA CELULAR, SE APLICA PARA DISPOSITIVOS DE COMO MAXIMO 412PX DE PANTALLA*/
 
-@media only screen and (max-width: 412px) {
+@media only screen and (min-width: 412px) and (max-width: 770px) {
     .name-container {
         font-size: 30px !important;
         margin-right: 20px; 
