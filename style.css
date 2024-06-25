@@ -6,6 +6,20 @@ body{
     margin-right: 0px;
 }
 
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Evitamos el scroll horizontal innecesario */
+}
+
+.container-main {
+    min-height: 100%; /* comprobamos que el contenedor principal ocupe al menos toda la altura de la pagina*/
+    position: relative;
+    overflow-y: auto; /* agregamos scroll vertical cuando sea necesario */
+    padding-bottom: 126px; /* agregamos espacio para el footer */
+}
+
 #product-random{
     margin-top: 10px;
     width: 300px;
@@ -43,11 +57,13 @@ background-color: rgba(0, 0, 0, 0.5);
     font-family: ui-sans-serif;
     text-align: center;
 }
+
 #footerpage {
-    position: fixed; 
+    position: absolute;
     bottom: 0;
     width: 100%;
-    text-align: center; 
+    text-align: center;
+    z-index: 1000; /* Asegura que el footer esté siempre encima del contenido */
 }
 
 p{
@@ -192,9 +208,12 @@ form{
 
 .table{
     width: 80%;
-    height: 320px;
     margin-left: 70px;
     text-align: center;
+}
+
+.table thead{
+    background-color: #b8b9b9;
 }
 
 #btnEliminar, #btnEditar{
@@ -206,6 +225,7 @@ form{
     float: right;
     margin-top: 10px ;
     margin-right: 10px;
+    margin-bottom: 15px;
     width: 238px;
 }
 

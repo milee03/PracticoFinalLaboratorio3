@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var tablaProductos = document.getElementById('contenedorTabla');
     console.log(tablaProductos)
     //MUESTRA TODOS LOS PRODUCTOS.
-    document.getElementById('btnmostrar').addEventListener('click', function(){
+    
         //HAGO VISIBLE LA TABLA
         tablaProductos.style.display = 'block';
         fetch(urlBase)
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
             MostrarProductos(productos);
         })
         .catch(error => console.error('Error:', error));
-    })
+    
 
    //MUESTRA PRODUCTOS FILTRADOS.
     document.getElementById('btnfiltro').addEventListener('click', function(){
@@ -38,12 +38,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 MostrarProductos(productos);
             }
             else{
-                alert("Ingresa un nombre a buscar sino presiona MOSTRAR PRODUCTOS")
+                alert("Ingresa un nombre a buscar.")
             }
         })
         .catch(error => console.error('Error:', error));
     })
 
+    function FormateoImportes(importe) {
+        // Convertir el número a string y separar los decimales
+        const partes = Number(importe).toFixed(2).split('.');
+        const pesos = partes[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+        return `${pesos},${partes[1]}`;
+    }
+    
     function MostrarProductos(productos) {
 
         let html = ``;
@@ -53,13 +60,18 @@ document.addEventListener('DOMContentLoaded', function() {
             const anio = fechaPartes[0];
             const mes = fechaPartes[1];
             const dia = fechaPartes[2];
-            const fechaFormateada = `${dia}-${mes}-${anio}`;
+            const fechaFormateada = `${dia}/${mes}/${anio}`;
+
+             // Formateo de precios utilizando la nueva función formateoImportes
+             const precioPesoFormateado = FormateoImportes(productos[i].precioPeso);
+             const precioDolarFormateado = FormateoImportes(productos[i].precioDolar);
+
             html += `
                 <tr style='height: 50px;'>
                     <td>${productos[i].idcod}</td>
                     <td>${productos[i].titulo}</td>
-                    <td>${productos[i].precioPeso}</td>
-                    <td>${productos[i].precioDolar}</td>
+                    <td>$ ${precioPesoFormateado}</td>
+                    <td>U$S ${precioDolarFormateado}</td>
                     <td>${fechaFormateada}</td>
                     <td>
                         <button class='eliminar btn btn-danger' data-id='${productos[i].idcod}' type='button' abbr title='Eliminar producto'><i class='fa-solid fa-trash'></i></button>
@@ -106,6 +118,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     throw new Error('Network response was not ok');
                 }
                 alert('Producto eliminado exitosamente');
+                window.location.href = 'viewproduct.html'; 
             })
             .catch(error => {
                 console.error('Error al eliminar el producto:', error);

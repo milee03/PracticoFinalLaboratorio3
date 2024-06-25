@@ -9,15 +9,15 @@
     <title>Productos</title>
 </head>
 <body>
+  <div class="container-main">
   <header>
       <script src="header.js"></script>
   </header>
   <script src="menu.js"></script>
-  <button type="button" class="btn btn-warning" id="btnmostrar">Mostrar Productos</button>
   <button type="button" class="btn btn-success" id="btnfiltro"><i class="fa-solid fa-magnifying-glass"></i></button>
   <input type="text" id="filtro" placeholder="Ingrese el nombre del producto">
-  <div id="contenedorTabla" style="display: none;">
-    <table class="table tableProducts" id="tablaProducto">
+  <div id="contenedorTabla" class="table-container" style="display: none;">
+    <table class="table table-bordered tableProducts" id="tablaProducto">
       <thead>
         <tr>
           <th>Código</th>
@@ -31,6 +31,7 @@
       <tbody id="productosCargados"></tbody>
     </table>
   </div>
+</div>
 </body>
 <footer id="footerpage">
   <script src="footer.js"></script>
