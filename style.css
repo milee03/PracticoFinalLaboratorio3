@@ -10,15 +10,16 @@ body, html {
     height: 100%;
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Evitamos el scroll horizontal innecesario */
+    overflow-x: hidden; 
 }
 
 .container-main {
-    min-height: 100%; /* comprobamos que el contenedor principal ocupe al menos toda la altura de la pagina*/
+    min-height: 100%;
     position: relative;
-    overflow-y: auto; /* agregamos scroll vertical cuando sea necesario */
-    padding-bottom: 126px; /* agregamos espacio para el footer */
+    padding-bottom: 126px; 
 }
+
+
 
 #product-random{
     margin-top: 10px;
@@ -63,7 +64,11 @@ background-color: rgba(0, 0, 0, 0.5);
     bottom: 0;
     width: 100%;
     text-align: center;
-    z-index: 1000; 
+    z-index: 1000;
+    background-color: #dfbebb; /* Ajusta según tu diseño */
+    color: black; /* Ajusta según tu diseño */
+    font-size: 17px; /* Ajusta según tu diseño */
+    font-weight: bold; /* Ajusta según tu diseño */
 }
 
 p{
@@ -211,11 +216,11 @@ form{
     width: 280px;
 }
 
-.table{
-    width: 80%;
-    margin-left: 70px;
-    text-align: center;
+.table {
+    width: 80%; 
+    margin: 20px auto; 
 }
+
 
 .table thead{
     background-color: #b8b9b9;
@@ -411,17 +416,16 @@ form{
     }
 
     #filtro {
-        margin-top: 10px; 
+        margin-top: 50px; 
         width: 138px; 
         font-size: 12px;
         margin-right: 5px;
     }
 
     #btnfiltro {
-        margin-right: 10px; 
         height: 34px;
         width: 38px;
-        margin-top: 15px; 
+        margin-top: 50px; 
     }
 
     #footer {
@@ -432,6 +436,12 @@ form{
 
     #footer-container{
         margin-top: 280px;
+    }
+
+    #footerpage {
+        position: relative; 
+        margin-top: 20px;
+        width: 100%; 
     }
 
     .menu {
